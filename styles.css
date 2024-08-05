@@ -1,0 +1,241 @@
+:root {
+    --background: black;
+    --foreground: #00ffd4;
+    --highlight: #08927b;
+    --border-radius: 15px;
+    --text-color: rgb(0, 0, 0);
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1; /* Place video behind other content */
+}
+
+.video-background video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the area without distortion */
+    filter: brightness(20%); /* Adjust the brightness */
+    filter: blur(4px);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--background);
+    font-family: 'Horizon', sans-serif;
+    color: var(--text-color);
+    
+}
+
+.header1 {
+    text-align: center;
+    padding: 90px;
+    color: var(--foreground);
+}
+
+h1 {
+    margin: 0;
+    font-size: 4rem;
+    font-weight: 700;
+}
+
+#line {
+    font-size: 1.25rem;
+    color:aliceblue;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.style-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 1rem;
+    color: var(--background);
+    background-color: var(--foreground);
+    border: none;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.style-btn:hover {
+    background-color: var(--highlight);
+    transform: scale(1.05);
+}
+
+/* Sponsor Info */
+.grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 30px;
+}
+
+.sponsor-level {
+    background-color: var(--foreground);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    max-width: 500px;
+    flex: 1 1 calc(50% - 60px);
+    box-shadow: 0px 0px 10px 5px rgb(4, 148, 138);
+}
+
+.taglineContainer {
+    text-align: center;
+}
+
+.heading {
+    font-size: 2rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.content {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+.grid2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 30px;
+    margin-top: 50px;
+}
+
+.sponsor-level-two {
+    background-color: var(--foreground);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0px 0px 10px 5px rgb(4, 148, 138);
+}
+
+.name {
+    color: var(--background);
+    font-size: 1.25rem;
+    margin-bottom: 5px;
+}
+
+.contact-info p {
+    font-size: 1rem;
+    color: var(--text-color);
+}
+
+hr {
+    border: none;
+    border-top: 2px solid var(--foreground);
+    width: 50%;
+    margin: 30px auto;
+}
+
+h2 {
+    color: var(--foreground);
+    font-size: 3rem;
+    text-align: center;
+    margin: 30px 0;
+}
+
+/* Sponsor Gallery */
+.sponsor-gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 20px;
+    box-sizing: border-box;
+    gap: 20px;
+    align-items: center;
+}
+
+.sponsor {
+    border-radius: var(--border-radius);
+    padding: 15px;
+    width: 200px;
+    text-align: center;
+    box-sizing: border-box;
+    flex: 0 0 auto;
+}
+
+.sponsor img {
+    width: 100%;
+    height: auto;
+    border-radius: var(--border-radius);
+    transition: transform 0.3s ease;
+}
+
+/* Ensure images scale up on hover */
+.sponsor img:hover {
+    transform: scale(1.1);
+}
+
+/* For Tablets and Smaller Screens */
+@media (max-width: 768px) {
+    .sponsor-gallery {
+        padding: 10px;
+    }
+
+    .sponsor {
+        flex: 0 0 100%;
+        scroll-snap-align: start;
+        box-sizing: border-box;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .sponsor-gallery {
+        margin-left: 0;
+        padding: 0;
+        overflow-x: auto;
+    }
+
+    .sponsor {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .sponsor-gallery img {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .sponsor-level {
+        padding: 10px; /* Adjust padding to reduce vertical space */
+        margin: 5px 0; /* Adjust vertical margin */
+        max-width: 100%; /* Full width */
+        box-shadow: none; /* Remove shadow for a cleaner look on mobile */
+    }
+    
+    .sponsor-level .taglineContainer {
+        padding-bottom: 10px; /* Reduce space between heading and content */
+    }
+
+    .sponsor-level .heading {
+        font-size: 1.5rem; /* Adjust font size */
+        margin-bottom: 5px; /* Adjust margin to reduce space */
+    }
+
+    .sponsor-level .content {
+        font-size: 0.875rem; /* Adjust font size for smaller screens */
+    }
+
+    .sponsor-level-two {
+        padding: 8px; /* Adjust padding */
+        margin: 5px 0; /* Adjust vertical margin */
+        width: 100%; /* Full width */
+    }
+}
